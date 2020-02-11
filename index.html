@@ -1,90 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Lobster|Noto+Sans+TC|Russo+One&display=swap"
+        rel="stylesheet">
     <title>Code Quiz</title>
 </head>
 
 <body>
-    <div class="container">
-
-        <div class="jumbotron" id="header">
-            <div class="col-md-8 offset-md-2 col-sm-12">
-                <h1>Code Quiz</h1>
-                <h5>Welcome to the code quiz. You will be asked a series of multiple choice questions. If you answer the
-                    question correctly, a point will be added to your score. If you get it wrong, the timer will
-                    decrease by 5 seconds. Try to complete the quiz before the timer reaches zero! Press 'Start' to
-                    begin the quiz. Good luck!</h5>
-                    <br>
-                    <button class="start-button">Start</button>
-                </div>
+    <header>
+        <button id="viewScores" class="btn btn-info">View High Scores</button>
+        <div class="time">
+            <span>Time: </span>
+            <span id="time__num">0</span>
+            <span>seconds</span>
         </div>
+    </header>
 
-        <div class="row" id="finish-game">
-            <div class="col-md-8 offset-md-2 col-sm-12" id="game-controls">
-                <button>Highscores</button>
-                <div class="time"></div>
-                <button>Restart</button>
-                <div class="high-scores">
-                    
-
-                </div>
-                <div class="end-game">
-                    <button>Save Score</button>
-                    <button>Clear Scores</button>
-                </div>
-                <div class="display-message">
-
-                </div>
+    <main>
+        <section id="intro">
+            <div class="heading h1">Coding Wizard</div>
+            <div class="description">
+                You have exactly 1 minute to answer the following questions.
+                <br>Any incorrect answer will cost you a 15 second penalty!
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 offset-md-2 col-sm-12" id="game-view">
-                <div class="game-start">
-
-                </div>
-                <div class="questions">
-
-                </div>
-                <div class="choices"></div>
-    
-                <!-- <div class="end-game hidden">
-                    <button>Save Score</button>
-                    <button>Clear Scores</button>
-                </div> -->
+            <button onclick="snd1.play()" id="startBtn" type="button" class="btn btn-danger">Start Quiz</button>
+        </section>
+        <section id="quiz">
+            <div class="quiz__title"></div>
+            <div class="quiz__choices"></div>
+            <div class="quiz__verdit"></div>
+        </section>
+        <section id="result">
+            <div class="heading h2">All done!</div>
+            <p class="result__comment">Your final score is
+                <span class="result__score">0</span>
+            </p>
+            <label class="initials">Enter initials: </label>
+            <input type="text" id="initials" value="">
+            <button id="submitBtn" class="btn btn-dark" type="submit">Submit</button>
+        </section>
+        <section id="scores">
+            <div class="heading h2">High Scores</div>
+            <div id="scores__ranking"></div>
+            <div class="scores__btn">
+                <button id="gobackBtn" class="btn btn-primary" type="button">Go Back</button>
+                <button id="clearBtn" class="btn btn-warning" type="button">Clear High Scores</button>
             </div>
+        </section>
+        <div id="verdict">
+            <hr>
+            <span id="verdict__word">right</span>
         </div>
+    </main>
 
-        <div class="row">
-            <div class="col-md-8 offset-md-2 col-sm-12" id="footer">
-
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="./assets/js/questions.js"></script>
-    <script src="./assets/js/app.js"></script>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+    <script>let snd1 = new Audio("./assets/jeopardy.mp3");
+        snd1.loop = true;
+    </script>
+    <script>let snd2 = new Audio("./assets/buzzer.mp3");</script>
+    <script>let snd3 = new Audio("./assets/AirHorn.mp3");</script>
 
 </body>
 

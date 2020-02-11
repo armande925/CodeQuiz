@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    max-width: 100vw;
+    font-size: 62.5%;
+}
+body{
+    
+    background-image: url('./assets/jeopardy.0.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+header{
+    margin-top: 2rem;
+    display:flex;
+    justify-content: space-around;
+}
+.time{
+    color: white;
+    font-size: 3rem;
+    font-family: 'Russo One', sans-serif;
+    text-shadow: 2px 2px 4px burlywood;
+}
+main {
+    max-width: 80rem;
+    margin: 5rem auto;
+    text-align: center;
+    padding: 1rem;
+}
+.description{
+    margin-bottom: 2rem;
+}
+.quiz__title{
+    padding-bottom: 1rem;
+}
+#scores__ranking,
+.quiz__choices{
+    display:inline-flex;
+    flex-direction: column;
+}
+.choiceBtn {
+    margin: .5rem 0;
+    text-align: left;
+}
+#scores__ranking > p {
+    text-align: left;
+}
+#result{
+    display:none;
+}
+#scores{
+    display:none;
+}
+#verdict{
+    opacity: 0;
+    color: orangered;
+}
+input{
+    padding: .5rem;
+    margin-right: 1rem;
+}
+
+
+.btn{
+    font-size: 1.6rem;
+}
+.heading {
+    
+    font-family: 'Anton', sans-serif;
+    color: thistle;
+    animation:blinkingText 1.2s infinite;
+    font-size: 50px;
+    
+    }
+    @keyframes blinkingText{
+        0%{     color:white;    }
+        49%{    color: white; }
+        60%{    color: transparent; }
+        99%{    color:transparent;  }
+        100%{   color: white;    }
+    }
+
+    /* #headingScore {
+    
+        font-family: 'Anton', sans-serif;
+        color: thistle;
+        animation:blinkingText 1.2s infinite;
+        font-size: 50px;
+        
+        } */
+
+  .description {
+      font-family: anton;
+      font-size: 20px;
+      color: white;
+      text-shadow: 2px 2px 4px purple;
+
+  }
+
+  #viewScores {
+      color: slategray;
+      background-color: snow;
+      font-family: 'Russo One', sans-serif;  
+      text-shadow: 2px 2px 4px burlywood;   
+     }
+
+    .quiz__title {
+        font-family: 'Anton', sans-serif;
+        color: white;
+        text-shadow: 2px 2px 4px purple;
+        
+    }
+
+    .result__comment {
+        color: white;
+        text-shadow: 2px 2px 4px black;
+        font-size: 20px;
+        font-family: 'Anton', sans-serif;
+    }
+
+    .initials {
+        color: white;
+        text-shadow: 2px 2px 4px black;
+        font-size: 20px;
+        font-family: 'Anton', sans-serif;
+    }
+
+
+
+    #scores {
+        color:white;
+        text-shadow: 2px 2px 4px black;
+        font-size: 20px;
+        font-family: 'Anton', sans-serif;
+    }
+
+
+@media screen and (max-width: 460px){
+    .scores__btn{
+        display: flex;
+        flex-direction: column;
+        margin: 0 3rem;
+    }
+    header{
+        flex-direction: column;
+        text-align: center;
+        margin: 0 3rem;
+    }
+    main{
+        margin-top: 1rem;
+    }
+    #initials{
+        margin-bottom: 1rem;
+    }
+}
