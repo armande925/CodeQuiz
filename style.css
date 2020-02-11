@@ -93,14 +93,7 @@ input{
         100%{   color: white;    }
     }
 
-    /* #headingScore {
-    
-        font-family: 'Anton', sans-serif;
-        color: thistle;
-        animation:blinkingText 1.2s infinite;
-        font-size: 50px;
-        
-        } */
+   
 
   .description {
       font-family: anton;

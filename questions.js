@@ -21,7 +21,7 @@ const questions = [
     },
     {
       title: "What does the second 's' stand for in CSS ?",
-      choices: ["Status", "Stated", "Style", "Sample"],
-      answer: "Style"
+      choices: ["Status", "Stated", "Sheet", "Sample"],
+      answer: "Sheet"
     },
   ];
